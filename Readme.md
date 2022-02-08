@@ -1,1 +1,1 @@
-This is the initial commit
+This repository contains all the competitive programming conceps and answers to different coding problems

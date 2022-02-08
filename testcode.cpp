@@ -3,20 +3,35 @@
 	using namespace std;
 
 	int main(){
-		int length,distinct;
-		cin >> length >> distinct;
-		string aa;
-		vector<char> arr;
-		int i=0;
-		for(char a='a';i<distinct;i++,a++){
-			if(a=='z'+1)a='a';
-			arr.push_back(a);
+		int t,n,k;
+		string s,temp,temp2;
+		cin >> t;
+		vector <string> se;
+		queue <string> q;
+		for(int i=0;i<t;i++){
+			se.clear();
+			cin >> n >> k;
+			cin >> s;
+			se.push_back(s);
+			for(int i=0;i<k;i++){
+					for(auto value:se){
+						q.push(value);
+						se.erase(se.begin());
+					}
+
+					se.clear();
+					while(!q.empty()){
+						string e=q.front();
+						q.pop();
+						string temp=e;
+						reverse(temp.begin(),temp.end());
+						if(find(se.begin(),se.end(),e+temp)==se.end())se.push_back(e+temp);
+						if(find(se.begin(),se.end(),temp+e)==se.end())se.push_back(temp+e);
+						// for(auto v:se)cout << v << "\n";
+						// cout << "HEHE\n";
+					}
 		}
-		// for(autov:arr)
-		// 	cout << v; 
-		int j=0;
-		for(int i=0;i<length;i++){
-			cout << arr[j++];
-			if(j==arr.size())j=0;
+			
+			cout << se.size() << "\n";
 		}
 	}
