@@ -1,1 +1,1 @@
-This repository contains all the competitive programming conceps and answers to different coding problems
+This repository contains all the competitive programming concepts and answers to different coding problems
